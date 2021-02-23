@@ -1,12 +1,10 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages{
-        stage("Build image"){
-
+        stage('Back-end-build') {
             steps {
-                        script { docker.build }
+                sh 'python3 --version'
             }
         }
     }
-
 }
